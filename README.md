@@ -95,7 +95,7 @@ ruff check .
 ruff format --check .
 ```
 
-The suite covers email and name validation, check-in window boundaries to the minute, late threshold edges, dedupe (including case differences), walk-ins after close, feedback rules, stats math, CSV output and formula injection, database constraints and cascades, admin auth, CSRF rejection, open redirect protection, token tampering, HTML escaping, and the seed script. Time is injected through a patched clock so tests are deterministic. A GitHub Actions workflow (ruff + pytest on Python 3.12) is included for CI.
+The suite covers email and name validation, check-in window boundaries to the minute, late threshold edges, dedupe (including case differences), walk-ins after close, feedback rules, stats math, CSV output and formula injection, database constraints and cascades, admin auth, CSRF rejection, open redirect protection, token tampering, HTML escaping, and the seed script. Time is injected through a patched clock so tests are deterministic. The same lint and test commands are intended to run in GitHub Actions on Python 3.12.
 
 ## Tech stack
 
