@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}ISN Check-in{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header><a href="{{ url_for('main.admin_events') }}" class="brand">ISN Check-in</a>
+{% if session.is_admin %}<form method="post" action="{{ url_for('main.logout') }}" class="inline"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="link">Log out</button></form>{% endif %}
+</header>
+<main>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% for cat, msg in messages %}<div class="flash {{ cat }}">{{ msg }}</div>{% endfor %}
+{% endwith %}
+{% block content %}{% endblock %}
+</main>
+</body>
+</html>

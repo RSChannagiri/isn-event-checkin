@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Officer login</h1>
+<form method="post" class="card">
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+<label>Admin token <input type="password" name="token" required></label>
+<button>Log in</button>
+</form>
+{% endblock %}

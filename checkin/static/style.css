@@ -1,0 +1,32 @@
+:root { --red: #9d2235; --ink: #222; --muted: #666; --bg: #faf8f6; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: var(--ink); background: var(--bg); }
+header { background: var(--red); color: #fff; padding: .75rem 1.5rem; display: flex; justify-content: space-between; }
+header a, .link { color: #fff; text-decoration: none; font-weight: 600; background: none; border: 0; cursor: pointer; }
+main { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+.card { background: #fff; border: 1px solid #e5e0dc; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.row { display: flex; gap: 1rem; flex-wrap: wrap; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; flex: 1; }
+.stats b { display: block; font-size: 1.6rem; color: var(--red); }
+label { display: block; font-size: .9rem; }
+input, textarea { width: 100%; padding: .45rem; border: 1px solid #ccc; border-radius: 4px; font: inherit; }
+.inline-form { display: flex; gap: .5rem; } .inline { display: inline; }
+button { background: var(--red); color: #fff; border: 0; border-radius: 4px; padding: .5rem 1rem; font: inherit; cursor: pointer; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { text-align: left; padding: .4rem .5rem; border-bottom: 1px solid #eee; font-size: .9rem; }
+.flash { padding: .6rem 1rem; border-radius: 4px; margin-bottom: 1rem; background: #e8f4ea; }
+.flash.error { background: #fbe9e9; }
+.pill { font-size: .75rem; padding: .1rem .5rem; border-radius: 999px; background: #eee; margin-right: .25rem; }
+.pill.late, .pill.closed { background: #fde2c8; } .pill.walk, .pill.open { background: #d8ecff; }
+.muted { color: var(--muted); } .small { font-size: .8rem; font-weight: normal; }
+.rating { display: flex; gap: 1rem; border: 0; padding: 0; } .rating input { width: auto; }
+.flex1 { flex: 1; min-width: 260px; }
+.qr { text-align: center; }
+h3 { margin: 0 0 .5rem; font-size: 1rem; }
+.bars .bar { display: grid; grid-template-columns: 6.5rem 1fr 2rem; align-items: center; gap: .5rem; font-size: .8rem; margin: .2rem 0; }
+.bars .bar i { display: block; height: .7rem; background: var(--red); border-radius: 3px; min-width: 2px; }
+.bars .bar b { text-align: right; }
+a { color: var(--red); }
+button:hover { filter: brightness(1.1); }
+@media (max-width: 640px) { .grid, .inline-form { display: block; } .grid > *, .inline-form > * { margin-bottom: .5rem; } .stats { grid-template-columns: repeat(2, 1fr); } }

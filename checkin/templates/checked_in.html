@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{% if result.already_checked_in %}You're already checked in{% else %}You're checked in!{% endif %}</h1>
+<p>Welcome to {{ event.name }}.{% if result.is_late %} You were marked as arriving late.{% endif %}</p>
+{% endblock %}

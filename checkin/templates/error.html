@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}{{ error.code }} {{ error.name }}{% endblock %}
+{% block content %}
+<h1>{{ error.code }} {{ error.name }}</h1>
+<p class="muted">{% if error.code == 404 %}That page or link does not exist. Check-in links must come from an official ISN QR code.{% elif error.code == 400 %}Your form session expired or the request was invalid. Please go back, refresh, and try again.{% else %}{{ error.description }}{% endif %}</p>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Check in: {{ event.name }}{% endblock %}
+{% block content %}
+<h1>{{ event.name }}</h1>
+<p class="muted">{{ event.location }}</p>
+{% if status == 'open' %}
+<form method="post" class="card">
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+<label>Full name <input name="name" required></label>
+<label>SCU email <input name="email" type="email" placeholder="you@scu.edu" required></label>
+<button>Check in</button>
+</form>
+{% elif status == 'not_open' %}<div class="flash error">Check-in opens at {{ event.opens_at.replace('T', ' ') }}.</div>
+{% else %}<div class="flash error">Check-in is closed. Find an officer to register as a walk-in.</div>{% endif %}
+{% endblock %}

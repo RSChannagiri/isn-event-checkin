@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Events</h1>
+<table>
+<tr><th>Event</th><th>Starts</th><th>Location</th><th>Attendees</th></tr>
+{% for e in events %}
+<tr><td><a href="{{ url_for('main.admin_event', event_id=e.id) }}">{{ e.name }}</a></td><td>{{ e.starts_at.replace('T', ' ') }}</td><td>{{ e.location }}</td><td>{{ e.attendee_count }}</td></tr>
+{% else %}<tr><td colspan="4">No events yet.</td></tr>{% endfor %}
+</table>
+<h2>Create event</h2>
+<form method="post" class="card grid">
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+<label>Name <input name="name" required></label>
+<label>Location <input name="location"></label>
+<label>Check-in opens <input type="datetime-local" name="opens_at" required></label>
+<label>Event starts <input type="datetime-local" name="starts_at" required></label>
+<label>Check-in closes <input type="datetime-local" name="closes_at" required></label>
+<label>Late after (minutes) <input type="number" name="late_after_minutes" value="10" min="0"></label>
+<button>Create</button>
+</form>
+{% endblock %}
