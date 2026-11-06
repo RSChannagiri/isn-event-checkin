@@ -1,0 +1,9 @@
+Flask==3.1.0
+Werkzeug==3.1.9
+Jinja2==3.1.6
+itsdangerous==2.2.0
+qrcode==8.0
+pillow==11.1.0
+Faker==40.44.0
+pytest==8.3.4
+ruff==0.9.6
